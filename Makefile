@@ -120,6 +120,11 @@ check :
 clean : tidy
 	rm -rf $(SITE)
 
+## links      : check links
+# depends on linklint, an html-link-checking module from http://www.linklint.org/
+links :
+	@linklint -doc /tmp/linkdoc -root _site /@
+
 ## ---------------------------------------
 
 ## book     : build the site including the all-in-one book.
